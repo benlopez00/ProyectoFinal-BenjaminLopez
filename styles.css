@@ -1,0 +1,98 @@
+body{
+    margin: 0%;
+}
+.grid{
+    display: grid;
+    grid-template-areas: 
+    "gridHeader"
+    "main"
+    "footer";
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-columns: 100%;
+    background-image: linear-gradient(to bottom right, orange, #FFE66D);
+}
+.Toastify__toast-body { font-family: 'Patrick Hand'; }
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-area: gridHeader;
+}
+h1{
+    font-family: 'Monoton', cursive;
+    font-weight: 90;
+    font-size: 50px;
+    word-spacing: 20px;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+}
+
+
+#formulario{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+#formulario form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#formulario form label{
+    font-family: 'Forum', cursive;
+    font-size: 20px;
+    margin: 10px;
+}
+#formulario form input{
+    font-family: 'Forum', cursive;
+    font-size: 15px;
+}
+#formulario form button{
+    font-family: 'Forum', cursive;
+    font-size: 15px;
+}
+#formulario form div{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+#resultados{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+#resultados p{
+    font-family: 'Forum', cursive;
+    font-size: 15px;
+}
+#resultados h2{
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.boton_estilo{
+    height: 40px;
+    width: 100px;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    border-color: red;
+    background-color: #FFE66D;
+    border-radius: 5px;
+}

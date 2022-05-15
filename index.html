@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Monoton&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Calculador de Cuotas</title>
+    <script defer src="costos.js"></script>
+    <script defer src="cuotas.js"></script>
+    <script defer src="procesamiento.js"></script>
+    <script defer src="functions.js"></script>    
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="grid">
+        <header id="botonHead">
+            <h1>Calculadora de Cuotas</h1>
+        </header>
+        <main>
+            <div id="formulario">
+                <form action="">
+                    <label class="formulario_label" for="costos">Ingrese en precio de sus productos</label>
+                    <input id="input_Costos" class="formulario_input" type="number" name="costos" min="0" placeholder="Ingrese un numero">
+                    <button id="agregar_Costos" class="formulario_boton" type="button">Agregar</button>
+                    <button id="borrar_Costos" class="formulario_boton" type="button">Borrar Ultimo</button>
+                    <div id="mostradorPrecio"></div>
+                    <label class="formulario_label" for="cuotas">Ingrese en cuantas cuotas desea pagar</label>
+                    <input id="input_Cuotas" class="formulario_input"  type="number" name="cuotas" min="0" placeholder="Ingrese un numero">
+                    <button id="agregar_Cuotas" class="formulario_boton" type="button">Agregar</button>
+                    <button id="borrar_Cuotas" class="formulario_boton" type="button">Borrar</button>
+                    <div id="mostradorCuota"></div>
+                    <label class="formulario_label" for="tipoTarjeta">Seleccione su metodo de pago: </label>
+                    <select class="formulario_select" name="medioDePago" id="tipoTarjeta">
+                        <option value="1">Visa</option>
+                        <option value="2">Mastercard</option>
+                        <option value="3">Cabal</option>
+                        <option value="4">Amex</option>
+                    </select>
+                </form>
+            </div>
+            <div id="resultados">
+                <div id="precio">
+                </div>
+                <div id="cuotas">
+                </div>
+                <div id="interes">
+                </div>
+            </div>
+            
+        </main>
+        <footer>
+            <div>
+                <button id="calcular" class="boton_estilo" type="button">Calcular</button>
+                <button id="reiniciar" class="boton_estilo" type="button">Reiniciar</button>
+            </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</html>
