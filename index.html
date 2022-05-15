@@ -25,15 +25,20 @@
             <div id="formulario">
                 <form action="">
                     <label class="formulario_label" for="costos">Ingrese en precio de sus productos</label>
-                    <input id="input_Costos" class="formulario_input" type="number" name="costos" min="0" placeholder="Ingrese un numero">
-                    <button id="agregar_Costos" class="formulario_boton" type="button">Agregar</button>
-                    <button id="borrar_Costos" class="formulario_boton" type="button">Borrar Ultimo</button>
-                    <div id="mostradorPrecio"></div>
+                    <div class="input">
+                        <input id="input_Costos" class="formulario_input" type="number" name="costos" min="0" placeholder="Ingrese un numero">
+                        <button id="agregar_Costos" class="formulario_boton" type="button">Agregar</button>
+                        <button id="borrar_Costos" class="formulario_boton" type="button">Borrar Ultimo</button>
+                    </div>
+                    <div class="mostrador" id="mostradorPrecio"></div>
                     <label class="formulario_label" for="cuotas">Ingrese en cuantas cuotas desea pagar</label>
-                    <input id="input_Cuotas" class="formulario_input"  type="number" name="cuotas" min="0" placeholder="Ingrese un numero">
-                    <button id="agregar_Cuotas" class="formulario_boton" type="button">Agregar</button>
-                    <button id="borrar_Cuotas" class="formulario_boton" type="button">Borrar</button>
-                    <div id="mostradorCuota"></div>
+                    <div class="input">
+                        <input id="input_Cuotas" class="formulario_input"  type="number" name="cuotas" min="0" placeholder="Ingrese un numero">
+                        <button id="agregar_Cuotas" class="formulario_boton" type="button">Agregar</button>
+                        <button id="borrar_Cuotas" class="formulario_boton" type="button">Borrar</button>
+                    </div>
+                    
+                    <div class="mostrador" id="mostradorCuota"></div>
                     <label class="formulario_label" for="tipoTarjeta">Seleccione su metodo de pago: </label>
                     <select class="formulario_select" name="medioDePago" id="tipoTarjeta">
                         <option value="1">Visa</option>
