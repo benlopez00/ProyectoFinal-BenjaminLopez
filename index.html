@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Monoton&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Calculador de Cuotas</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script defer src="costos.js"></script>
     <script defer src="cuotas.js"></script>
     <script defer src="procesamiento.js"></script>
@@ -70,12 +71,17 @@
                     
                     <div class="mostrador" id="mostradorCuota"></div>
                     <label class="formulario_label" for="tipoTarjeta">Seleccione su metodo de pago: </label>
-                    <select class="formulario_select" name="medioDePago" id="tipoTarjeta">
-                        <option value="1">Visa</option>
-                        <option value="2">Mastercard</option>
-                        <option value="3">Cabal</option>
-                        <option value="4">Amex</option>
-                    </select>
+                    <div>
+                        <select class="formulario_select" name="medioDePago" id="tipoTarjeta">
+                            <option value="1">Visa</option>
+                            <option value="2">Mastercard</option>
+                            <option value="3">Cabal</option>
+                            <option value="4">Amex</option>
+                        </select>
+                        <button id="contenedorBoton" type="button"><img id="botonDuda" src="duda.png" alt="consulta sobre tarjetas"></button>
+                    </div>
+                    
+                    
                 </form>
             </div>
             <div id="resultados">

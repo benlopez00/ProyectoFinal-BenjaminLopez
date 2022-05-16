@@ -69,8 +69,6 @@ primeraConversion("dolarbolsa");
 primeraConversion("euro/nacion");
 primeraConversion("real/nacion");
 
-
-
 const hostCripto = `https://criptoya.com/api/bitso`;
 async function segundaConversion(moneda, fiat, cantidad){
     const conversion = await fetch(`${hostCripto}/${moneda}/${fiat}/${cantidad}`);
@@ -86,6 +84,5 @@ async function segundaConversion(moneda, fiat, cantidad){
 segundaConversion(`btc`,`usd`,`0.1`);
 segundaConversion(`eth`,`usd`,`0.1`);
 segundaConversion(`usdt`,`ars`,`0.1`);
-
 
 

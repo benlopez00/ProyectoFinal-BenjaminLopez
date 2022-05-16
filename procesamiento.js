@@ -40,3 +40,21 @@ function seleccionarMedioDePago(tipoTarjeta){
         console.log(`TASA del medio de pago con operador${tasaDelMedioDePago}`);
     }
 }
+
+
+
+function botonDuda(){
+    let botonDuda = document.getElementById("contenedorBoton");
+    botonDuda.addEventListener("click", ()=>{
+        swal({
+            title: "Tasa de Interes segun tarjeta:",
+            text: `Visa: 3%
+                Mastercard: 3,2%
+                Cabal: 3.8%
+                Amex: 4%`,
+                button: "Ok",
+        });
+    })
+}
+
+botonDuda();
