@@ -50,42 +50,42 @@ function precioCalculo(precio, cuota, tasaDelMedioDePago){
 
 
 
-//API
-const host = 'api.frankfurter.app';
+//APIs
+const hostFiat = 'https://api-dolar-argentina.herokuapp.com/api/';
+async function primeraConversion(endpoint){
+    const conversion = await fetch(`${hostFiat}${endpoint}`)
+    const dataFinalUno = await conversion.json();
+    console.log(dataFinalUno);
 
-async function primeraConversion(){
-    const GbpUsd = await fetch(`https://${host}/latest?amount=1&from=GBP&to=USD`)
-    const dataFinalUno = await GbpUsd.json();
-    console.log(dataFinalUno)
-        Toastify({
-            text: `1 GBP = ${dataFinalUno.rates.USD} USD`,
-            duration: 7000,
-            style: {
-                background: 'linear-gradient(90deg, rgba(11,0,182,1) 0%, rgba(24,176,0,1) 100%)',
-                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"},
-            position: `left`,
-            gravity:`bottom`,
-        }).showToast()
+    let nodoFiat = document.createElement("p");
+    nodoFiat.innerHTML = `$ ${dataFinalUno.venta}`;
+
+    let fiatHtml = document.getElementById(`${endpoint}`);
+    fiatHtml.appendChild(nodoFiat);
 };
+primeraConversion("dolaroficial");
+primeraConversion("dolarblue");
+primeraConversion("dolarbolsa");
+primeraConversion("euro/nacion");
+primeraConversion("real/nacion");
 
 
-async function segundaConversion(){
-    const UsdBrl = await fetch(`https://${host}/latest?amount=1&from=USD&to=BRL`);
-    const dataFinalDos = await UsdBrl.json();
-    console.log(dataFinalDos)
-        Toastify({
-            text: `1 USD = ${dataFinalDos.rates.BRL} BRL`,
-            duration: 7000,
-            style: {
-                background: 'linear-gradient(90deg, rgba(24,176,0,1) 0%, rgba(249,255,0,1) 90%)',
-                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"},
-            position: `left`,
-            gravity:`bottom`,
-        }).showToast()
+
+const hostCripto = `https://criptoya.com/api/bitso`;
+async function segundaConversion(moneda, fiat, cantidad){
+    const conversion = await fetch(`${hostCripto}/${moneda}/${fiat}/${cantidad}`);
+    const dataFinalDos = await conversion.json();
+    console.log(dataFinalDos);
+
+    let nodoCripto = document.createElement("p");
+    nodoCripto.innerHTML = `$ ${dataFinalDos.ask}`;
+
+    let criptoHtml = document.getElementById(`${moneda}`);
+    criptoHtml.appendChild(nodoCripto);
 };
-
-primeraConversion();
-segundaConversion();
+segundaConversion(`btc`,`usd`,`0.1`);
+segundaConversion(`eth`,`usd`,`0.1`);
+segundaConversion(`usdt`,`ars`,`0.1`);
 
 
 
